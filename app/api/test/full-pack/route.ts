@@ -17,8 +17,8 @@ import { generateFullPackAndEmail } from '@/lib/petale-order';
 
 const TestSchema = z.object({
   email: z.string().email(),
-  // v0.1.19: 用 orderId 直接查表（避免重复生成 12 张）
-  orderId: z.string().uuid().optional(),
+  // v0.1.23: 放宽 orderId 验证（不再强制 UUID 格式，方便手动复制测试）
+  orderId: z.string().min(10).optional(),
   // 保留旧参数以兼容（v0.1.18 之前的调用）
   imageUrl: z.string().url().optional(),
   uploadId: z.string().uuid().optional(),
