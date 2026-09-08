@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
         <p>
           <strong>petale</strong> est un service édité par Haoyu (auto-entrepreneur), basé à
           Paris, France. Pour toute question relative à vos données personnelles, contactez-nous
-          à&nbsp;: <a href="mailto:hello@petale.love">hello@petale.love</a>.
+          à&nbsp;: <a href="mailto:customer@petale.love">customer@petale.love</a>.
         </p>
       </section>
 
@@ -75,7 +75,7 @@ export default function PrivacyPolicyPage() {
           <li>Droit d&apos;opposition au traitement</li>
         </ul>
         <p>
-          Pour exercer ces droits, écrivez à <a href="mailto:hello@petale.love">hello@petale.love</a>. Réponse
+          Pour exercer ces droits, écrivez à <a href="mailto:customer@petale.love">customer@petale.love</a>. Réponse
           sous 30 jours.
         </p>
       </section>
@@ -105,7 +105,7 @@ export default function PrivacyPolicyPage() {
           7. Contact DPO
         </h2>
         <p>
-          Pour toute réclamation&nbsp;: <a href="mailto:hello@petale.love">hello@petale.love</a>. Vous pouvez
+          Pour toute réclamation&nbsp;: <a href="mailto:customer@petale.love">customer@petale.love</a>. Vous pouvez
           aussi saisir la <a href="https://www.cnil.fr/fr/plaintes">CNIL</a> (Commission
           nationale de l&apos;informatique et des libertés).
         </p>

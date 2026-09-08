@@ -46,7 +46,7 @@ export default function TermsPage() {
           Conformément à l&apos;article <strong>L221-28 du Code de la consommation</strong>, le droit de rétractation ne s&apos;applique pas aux contenus numériques fournis immédiatement après téléchargement. Une fois le paiement effectué et les portraits générés, la vente est <strong>définitive et non remboursable</strong>. Les portraits vous appartiennent, libres de droits pour usage personnel.
         </p>
         <p>
-          En cas de problème technique (portraits non générés, ZIP corrompu), écrivez à <a href="mailto:hello@petale.love">hello@petale.love</a> sous 48h — on remplace ou corrige gratuitement.
+          En cas de problème technique (portraits non générés, ZIP corrompu), écrivez à <a href="mailto:customer@petale.love">customer@petale.love</a> sous 48h — on remplace ou corrige gratuitement.
         </p>
       </section>
 
@@ -103,7 +103,7 @@ export default function TermsPage() {
       </section>
 
       <footer className="mt-12 border-t border-museau-200 pt-6 text-sm text-museau-700">
-        <p>© 2026 petale · Haoyu, Paris · hello@petale.love</p>
+        <p>© 2026 petale · Haoyu, Paris · customer@petale.love</p>
       </footer>
     </article>
   );

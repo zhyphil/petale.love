@@ -72,7 +72,7 @@ export async function sendOrderConfirmation({
         </div>
 
         <p style="font-size: 14px; color: #834626; margin-top: 32px;">
-          Pour toute question, écrivez à <a href="mailto:hello@petale.love" style="color: #c87838;">hello@petale.love</a>, on vous répond sous 24h.
+          Pour toute question, écrivez à <a href="mailto:customer@petale.love" style="color: #c87838;">customer@petale.love</a>, on vous répond sous 24h.
         </p>
         <p style="font-size: 14px; color: #834626;">
           — L'équipe petale 🐾

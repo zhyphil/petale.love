@@ -17,7 +17,7 @@ export function Footer() {
             <a href="/cgu" className="hover:text-petale-950">
               CGU
             </a>
-            <a href="mailto:hello@petale.love" className="hover:text-petale-950">
+            <a href="mailto:customer@petale.love" className="hover:text-petale-950">
               Contact
             </a>
             <a
