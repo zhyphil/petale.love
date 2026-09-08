@@ -141,6 +141,19 @@ export default function StudioPage() {
   }
 
   return (
+    <>
+      {/* v0.1.39: 始终渲染的 hidden file input（之前在 !preview 分支里，已上传时 input 被卸载导致 ref 失效） */}
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="image/jpeg,image/png"
+        className="sr-only"
+        onChange={(e) => {
+          const file = e.target.files?.[0];
+          if (file) handleFile(file);
+          e.target.value = ''; // 重置 value 以允许重选同名图
+        }}
+      />
     <div className="min-h-screen bg-petale-50">
       {/* Header */}
       <header className="border-b border-petale-200 bg-white">
@@ -196,6 +209,7 @@ export default function StudioPage() {
         {stage === 'success' && <SuccessStage />}
       </main>
     </div>
+    </>
   );
 }
 
@@ -238,14 +252,6 @@ function UploadStage({
             <p className="mt-1 text-sm text-petale-600">
               Vos photos ne sont jamais partagées
             </p>
-            <input
-              id="file-upload"
-              ref={fileInputRef}
-              type="file"
-              accept="image/jpeg,image/png"
-              className="hidden"
-              onChange={(e) => e.target.files?.[0] && onFile(e.target.files[0])}
-            />
           </label>
         ) : (
           <div className="space-y-6">

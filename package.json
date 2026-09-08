@@ -1,6 +1,6 @@
 {
   "name": "petale",
-  "version": "0.1.38",
+  "version": "0.1.39",
   "private": true,
   "description": "petale — 宠物 AI 肖像，先看后付",
   "scripts": {
