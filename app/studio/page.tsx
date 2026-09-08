@@ -249,16 +249,27 @@ function UploadStage({
           </label>
         ) : (
           <div className="space-y-6">
-            <div className="relative aspect-square w-full max-w-md mx-auto overflow-hidden rounded-3xl bg-white shadow-lg">
+            <div className="relative aspect-square w-full max-w-md mx-auto overflow-hidden rounded-3xl bg-white shadow-lg group">
               <Image src={preview} alt="Preview" fill className="object-cover" />
+
+              {/* 悬浮在右上角的'换图'按钮（v0.1.38: 美化设计） */}
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                aria-label="Changer la photo"
+                className="absolute top-3 right-3 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 backdrop-blur shadow-lg ring-1 ring-petale-200 transition-all hover:bg-white hover:scale-110 hover:ring-petale-400 active:scale-95"
+              >
+                <Upload className="h-5 w-5 text-petale-700" />
+                <span className="sr-only">Changer la photo</span>
+              </button>
+
+              {/* 底部文字提示（hover 时显示） */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 opacity-0 transition-opacity group-hover:opacity-100">
+                <p className="text-center text-xs font-medium text-white">
+                  Cliquez pour changer la photo
+                </p>
+              </div>
             </div>
-            <button
-              type="button"
-              onClick={() => fileInputRef.current?.click()}
-              className="text-sm text-petale-600 hover:text-petale-800 underline"
-            >
-              Changer de photo
-            </button>
             <div className="text-center">
               <button
                 onClick={onSubmit}
