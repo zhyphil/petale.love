@@ -33,7 +33,7 @@ export function Hero() {
           <p className="mt-6 text-lg leading-8 text-petale-800 sm:text-xl">
             Téléchargez une photo de votre chien, chat ou lapin.
             <span className="font-semibold"> 3 portraits gratuits</span> générés par IA.
-            Vous aimez ? Recevez 42 autres dans 12 styles.
+            Vous aimez ? Recevez 44 autres dans 10 styles.
             <span className="font-semibold"> Vente définitive — téléchargement immédiat.</span>
           </p>
 
