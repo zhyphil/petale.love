@@ -48,3 +48,6 @@ Thumbs.db
 
 # petale：避免 commit 生成的  ZIP 文件
 petale-*.zip
+# 项目临时输出（不属于 petale）
+/ao-output/
+/workflows/
