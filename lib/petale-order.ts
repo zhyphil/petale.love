@@ -38,7 +38,7 @@ export async function generateFullPackAndEmail({
   console.log(`[generate] Starting ${TOTAL} portraits (${FULL_PACK_STYLES.length} styles × 5 variants in parallel) for ${email} (order ${orderId})...`);
 
   // v0.1.29: 48 张全部并行（不串行）—— 串行需要 12 分钟，并行 ~30 秒
-  type GenerationResult = { style: string; variant: 1 | 2 | 3 | 4; url: string };
+  type GenerationResult = { style: string; variant: 1 | 2 | 3 | 4 | 5; url: string };
 
   const generationTasks: Promise<GenerationResult | null>[] = [];
 
