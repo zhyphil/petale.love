@@ -31,30 +31,54 @@ export async function generateFullPackAndEmail({
   imageUrl: string;
   supabase: SupabaseClient;
 }) {
-  const portraits: string[] = [];
   const VARIANTS = [1, 2, 3, 4] as const;
   const TOTAL = FULL_PACK_STYLES.length * VARIANTS.length; // 12 × 4 = 48
 
-  console.log(`[generate] Starting ${TOTAL} portraits (${FULL_PACK_STYLES.length} styles × 4 variants) for ${email} (order ${orderId})...`);
+  console.log(`[generate] Starting ${TOTAL} portraits (${FULL_PACK_STYLES.length} styles × 4 variants in parallel) for ${email} (order ${orderId})...`);
+
+  // v0.1.29: 48 张全部并行（不串行）—— 串行需要 12 分钟，并行 ~30 秒
+  type GenerationResult = { style: string; variant: 1 | 2 | 3 | 4; url: string };
+
+  const generationTasks: Promise<GenerationResult | null>[] = [];
 
   for (const style of FULL_PACK_STYLES) {
     for (const variant of VARIANTS) {
-      try {
-        const result = await generatePetPortrait({ imageUrl, style, variant });
-        portraits.push(result.imageUrl);
-        console.log(`[generate] ✅ ${style} v${variant} (${portraits.length}/${TOTAL})`);
+      generationTasks.push(
+        (async () => {
+          try {
+            const result = await generatePetPortrait({ imageUrl, style, variant });
+            console.log(`[generate] ✅ ${style} v${variant} done`);
+            return { style, variant, url: result.imageUrl };
+          } catch (err) {
+            console.error(`[generate] ❌ ${style} v${variant} failed:`, err);
+            return null;
+          }
+        })(),
+      );
+    }
+  }
 
-        await supabase.from('generated_portraits').insert({
-          upload_id: uploadId,
-          order_id: orderId,
-          style: `${style}-v${variant}`,
-          image_url: result.imageUrl,
-          replicate_model: result.model,
-          cost_cents: Math.round(result.cost * 100),
-        });
-      } catch (err) {
-        console.error(`[generate] ❌ ${style} v${variant} failed:`, err);
-      }
+  // 全部并行启动
+  const results = await Promise.all(generationTasks);
+  const portraits = results
+    .filter((r): r is GenerationResult => r !== null)
+    .map((r) => r.url);
+
+  // 写 DB（串行避免 burst）
+  for (let i = 0; i < results.length; i++) {
+    const r = results[i];
+    if (!r) continue;
+    try {
+      await supabase.from('generated_portraits').insert({
+        upload_id: uploadId,
+        order_id: orderId,
+        style: `${r.style}-v${r.variant}`,
+        image_url: r.url,
+        replicate_model: 'flux-2-pro',
+        cost_cents: 6,
+      });
+    } catch (err) {
+      console.error(`[generate] ❌ DB insert ${r.style}-v${r.variant} failed:`, err);
     }
   }
 
