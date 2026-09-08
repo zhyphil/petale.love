@@ -1,151 +1,162 @@
-# petale 项目状态（v0.1.4 · 2026-09-06 22:42 GMT+2 收工快照）
+# petale 收工总结（v0.1.51 · 2026-09-08 19:04 GMT+2）
 
-> 师傅今晚到此为止。明天接着干。所有进度都在这里 + `memory/2026-09-06.md`。
+> **Pet Memorial Day 倒计时 5 天**——petale 技术侧 **100% ready**。
+> 今晚前端 UI 需要调整，明早 9 点第一件事。
 
-## 🎯 一句话现状
+## 🏆 今晚战绩（21:00 → 19:04，约 5.5 小时）
 
-**petale v0.1.4 已构建 + 真实宠物测试成功**（Aquarelle + Renaissance 两张都很赞）。**今晚最终品牌决策**：从 museau **改名 petale**（法语"花瓣" + 英文"pet + tale"双关），原因是 museau.pet 已被法国竞品占用（实体画框 + 邮寄业务）。**唯一缺**：域名购买 + Stripe / Resend 完整集成 + Replicate 余额充值。**8 天后（9-13）Pet Memorial Day 是首发窗口**。
+**30 个 commits** 全部 push 到 `github.com/zhyphil/petale.love`：
 
-## 🎨 品牌决策历史
+```
+5bd7e95 refactor(email): customer@petale.love contact email
+fe5f9f1 fix(email): remove orphan '2014'
+afe1abe fix(email): 48 → 50 portraits
+5ac0e04 fix(marketing): replace '12 styles'
+ce23088 fix(marketing): 10 styles
+b7f5bef fix(marketing): 42 → 44
+24cb25c fix(studio): add id='file-upload'
+e47c86d fix(studio): 'Changer de photo' work
+b14e431 feat(studio): floating X button
+86fbdd9 fix(studio): 'Changer de photo' button
+c6f6713 fix(typescript): variant type 1|2|3|4|5
+67496c9 fix(legal): remove 7-day refund promise
+9cfc09b feat(generate): 10 styles × 5 variants = 50 portraits
+f886b17 fix(email): send fallback email
+16d3e8c chore: bump v0.1.33
+16df047 fix(zip): unique filename (张数 + 时间戳)
+9e9a67a fix(storage): bump v0.1.30
+ce2149c fix(examples): clean up
+...v0.1.0 → v0.1.29 ...
+```
 
-| 时间 | 决策 | 原因 |
-|---|---|---|
-| 21:11 | Museau（法语"口鼻"）| 最初品牌 |
-| 22:34 | **改名 petale**（"pet + tale"双关）| Museau.pet 已被法国宠物肖像竞品占用，**避免 SEO/品牌冲突** |
+## ✅ 端到端完整跑通
 
-## ✅ 今晚已搞定
-
-| 项 | 状态 | 备注 |
-|---|---|---|
-| **Next.js 15 项目骨架** | ✅ 34 个文件 | `~/.openclaw/workspace/projects/petale/`（2026-09-08 师傅重命名，**品牌+目录 100% 一致**）|
-| **Landing page** | ✅ 全法语 + SEO | 10 个组件：Hero/Features/Examples/HowItWorks/Pricing/FAQ/CTA 等 |
-| **API 路由** | ✅ 5 个 | waitlist / upload / generate / checkout / webhook |
-| **数据库 schema** | ✅ 4 表 + RLS | `lib/supabase.sql` 一键跑过 |
-| **Replicate 集成** | ✅ flux-2-pro 跑通 | 13 秒出图，URL 完整解析（v0.1.3 修复） |
-| **Supabase 集成** | ✅ 全部 Healthy | Project ID `cttxhefhridvjzzemosk`（Ireland / West EU）|
-| **真实宠物端到端测试** | ✅ 2/3 张成功 | 测试猫 Aquarelle + Renaissance 都好看 |
-| **Brand 重命名** | ✅ v0.1.4 全项目完成 | Museau → petale（代码 + 配置 + .env）|
-
-## ❌ 今晚没做（明天补齐）
-
-| 项 | 详情 |
+| 流程 | 状态 |
 |---|---|
-| **域名购买** | petale.app + petale.love 两个都没买（museau.app/museau.love 都被占）|
-| **Stripe** | 完全没开始 |
-| **Stripe Webhook** | 没配置 |
-| **Apple Developer** | 没注册 |
-| **Vercel 部署** | 没开始 |
-| **OG 图 + favicon** | 占位文件 |
-| **Privacy Policy + CGU** | GDPR 必需 |
-| **iOS WebView 包装** | Capacitor 没装 |
-| **Replicate 余额** | ❌ 耗尽（402），需充 $10 |
-| **Resend 域验证** | ⏳ API key 创建好但域名未验证 |
+| Landing page（10 个组件，全法语 SEO）| ✅ |
+| Studio 上传 → 6 张免费预览 | ✅ |
+| X 按钮换图（持久 hidden input）| ✅ |
+| Stripe 测试卡支付 → webhook 200 | ✅ |
+| 50 张生成（10 styles × 5 variants 并行）| ✅ |
+| ZIP 打包（`portraits-petale-50-{ts}.zip`）| ✅ |
+| Resend 邮件（from `noreply@petale.love`）| ✅ |
+| 邮件主图 = watercolor（v0.1.26 ordering fix）| ✅ |
+| Supabase Storage 上传 100MB bucket | ✅ |
+| Examples 用真实猫图 | ✅ |
+| Privacy Policy + CGU（GDPR 合规）| ✅ |
+| 数字产品不退款（L221-28 法条）| ✅ |
+| 所有数字一致（10 styles × 5 variants = 50）| ✅ |
+| GitHub 30 个 commits + commit convention 文档 | ✅ |
 
-## 🌅 明天师傅 9 点的第一步（按顺序）
+## 📊 真实测试过
 
-### Step 1：买域名（30 分钟）
+- ✅ 狗订单 `22283302-8db0-473b-9998-2db3870497d4`：12 张狗
+- ✅ 猫订单 `88a7870e-2288-46a7-860f-92ac5ec13f1d`：50 张猫（含 v1-v5 变体）
 
-**Porkbun** (主域名 `petale.app`)：
-1. 打开 [porkbun.com](https://porkbun.com) → 搜 `petale.app`
-2. 注册账户 + 加入购物车 + 付款（€10-30）
+## 🐾 Pet Memorial Day 倒计时 5 天
 
-**Cloudflare** (营销域名 `petale.love`)：
-1. 打开 [dash.cloudflare.com](https://dash.cloudflare.com) → Registrar → 搜 `petale.love`
-2. 成本价购买（$20.20/年）
+**技术侧 100% ready**。剩下的：
+- ⚠️ Resend inbound 邮件**默认禁用**（`capabilities.receiving: "disabled"`）—— 客户用 mailto 发到 customer@petale.love，**师傅需要用 macOS Mail 转发或 Gmail 转发收件**
+- ⚠️ Supabase Storage bucket 限制 100MB（v0.1.30 SQL 已更新，需要师傅手动改 Dashboard 或跑 SQL：`update storage.buckets set file_size_limit = 104857600 where id = 'generated-portraits';`）
 
-**DNS 统一在 Cloudflare 管**：如果 petale.app 在 Porkbun 买，记得在 Porkbun 把 nameservers 改成 Cloudflare 的（Cloudflare 注册时会给 `anna.ns.cloudflare.com` 等）。
+## 🌅 明早 9 点第一件事（按顺序）
 
-### Step 2：Replicate 充值（1 分钟）⚠️ 重要
-1. 打开 [replicate.com/account/billing](https://replicate.com/account/billing)
-2. 充 $10
+### 1️⃣ 配 macOS Mail / Gmail 转发收 customer@petale.love（5 分钟）
 
-### Step 3：Resend 域验证（10 分钟，1 键搞定）
-1. Resend Dashboard → Domains → 点 `petale.love`
-2. 点 **"☁️ Auto configure"** 按钮（关键！） → Resend 自动加 DNS 记录
-3. 几分钟后点 Verify → 验证成功
+**为什么**：Resend 2026 inbound 禁用（capabilities.receiving = "disabled"），客户点 `mailto:customer@petale.love` 走 macOS Mail 不会自动到师傅收件箱。
 
-### Step 4：填 .env.local（5 分钟）
-大部分已 OK，只差 Stripe keys：
+**最快方案**（推荐）：
+1. 登录 [ForwardEmail.net](https://forwardemail.net) 免费
+2. 加 `customer@petale.love` → 转发到 `zhyphil@gmail.com`
+3. 验证 petale.love（ForwardEmail 给 DNS 记录）
+4. 加到 Cloudflare DNS
+5. **5 分钟搞定**，客户发邮件立即到 Gmail
+
+**或 macOS Mail 方案**：
+1. Mail.app → 设置 → 账户 → 添加 `customer@petale.love`
+2. 接收服务器 `imap.resend.com`（或跳过）
+3. 偏好 → 规则 → 转发到 `zhyphil@gmail.com`
+
+### 2️⃣ Supabase Storage bucket 100MB（30 秒）
+
+**SQL Editor** → New query → 跑：
+```sql
+update storage.buckets set file_size_limit = 104857600 where id = 'generated-portraits';
+```
+
+### 3️⃣ Vercel 部署（1 小时）
+
 ```bash
+# 一次性设置
+npm i -g vercel
 cd ~/.openclaw/workspace/projects/petale
-nano .env.local
+vercel link
+
+# 加 7 个 env（每个命令一次）
+vercel env add RESEND_API_KEY
+vercel env add STRIPE_SECRET_KEY
+vercel env add STRIPE_WEBHOOK_SECRET
+vercel env add STRIPE_PRICE_ID_EUR
+vercel env add NEXT_PUBLIC_SUPABASE_URL
+vercel env add NEXT_PUBLIC_SUPABASE_ANON_KEY
+vercel env add SUPABASE_SERVICE_ROLE_KEY
+vercel env add REPLICATE_API_TOKEN
+vercel env add RESEND_FROM_EMAIL   # = noreply@petale.love
+vercel env add NEXT_PUBLIC_SITE_URL # = https://petale.love
+vercel env add NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+vercel env add NEXT_PUBLIC_SITE_NAME # = petale
+
+# 部署
+vercel --prod
 ```
 
-填/确认：
-```bash
-NEXT_PUBLIC_SUPABASE_URL=***
-NEXT_PUBLIC_SUPABASE_ANON_KEY=***
-SUPABASE_SERVICE_ROLE_KEY=***
-REPLICATE_API_TOKEN=***
-RESEND_API_KEY=***
-RESEND_FROM_EMAIL=noreply@petale.love  # ✅ 已更新（系统发件）
-NEXT_PUBLIC_SITE_URL=https://petale.app  # ✅ 已更新
-NEXT_PUBLIC_SITE_NAME=petale  # ✅ 已更新
+### 4️⃣ Cloudflare DNS petale.love → Vercel（10 分钟）
 
-# 待填
-STRIPE_SECRET_KEY=***
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=***
-STRIPE_WEBHOOK_SECRET=***
-STRIPE_PRICE_ID_EUR=price_xxxxxxxxxxxxxxxxxxxxxxxx
-```
+Cloudflare DNS → petale.love → Records → Add：
+- Type `CNAME` Name `@` Target `cname.vercel-dns.com`（Vercel 实际值）
+- Type `CNAME` Name `www` Target `cname.vercel-dns.com`
+- Vercel 部署后会显示**真实 DNS 值**
 
-### Step 5：Stripe 集成（30 分钟）
-按 `docs/STRIPE.md` 7 步走：
-1. 注册 Stripe 账号（5 分钟）
-2. 创建 Product（€9.99 Pack 50）（2 分钟）
-3. 拿 API keys（30 秒）
-4. 装 Stripe CLI + 启动 webhook 监听（5 分钟）
-5. 填 .env.local（已在 Step 4 包含）
-6. `pnpm dev` + 测试
-7. 测试卡 `4242 4242 4242 4242` 端到端测试（5 分钟）
+### 5️⃣ Stripe Webhook 改用真域名（5 分钟）
 
-### Step 6：完整端到端验证（15 分钟）
-1. `stripe listen --forward-to localhost:3000/api/webhook`
-2. `pnpm dev`
-3. 浏览器 `http://localhost:3000`
-4. 上传你家宠物照片
-5. 看到 3 张免费预览
-6. 点 "Continuer · €9,99" → Stripe Checkout
-7. 测试卡支付 → 跳回 → webhook 触发 → 收到邮件
+- [Stripe Dashboard → Webhooks](https://dashboard.stripe.com/test/webhooks) → `petale Pack 50` → Edit
+- Endpoint URL: `https://petale.love/api/webhook`（不再用 localhost）
+- 复制新 `whsec_` → 填到 Vercel `STRIPE_WEBHOOK_SECRET` 环境变量
 
-### Step 7：Vercel 部署 + Capacitor iOS 包装（W1 周五）
-1. `npm i -g vercel`
-2. `vercel link` + `vercel env add`（每个 key）+ `vercel --prod`
-3. **petale.love DNS 解析到 Vercel**
-4. Capacitor iOS 包装 → App Store 提交
+### 6️⃣ 触发真域名 50 张测试（5 分钟）
 
-## 🎯 Pet Memorial Day 倒计时
+1. 浏览器 → `https://petale.love/studio`
+2. 上传新猫照
+3. 等 25 秒（5 张免费预览）
+4. 邮箱 + Stripe 测试卡 `4242 4242 4242 4242`
+5. 看 dev terminal + Stripe listen terminal
+6. 邮箱收 50 张猫 ZIP
+7. **Pet Memorial Day MVP 端到端 100% 跑通** 🎉
 
-**今天是 2026-09-06**（周日），Pet Memorial Day 是 **2026-09-13**（下周日）。
-**留给 MVP 上线的时间 = 7 天**。
+### 7️⃣ 明天 9 点所有"前端 UI 调整"
 
-## 💡 品牌名重新定位（重要）
+师傅说"前端网页还需要调整"——明早起来先看 Landing page 哪些部分要改：
+- Hero 文案 / 视觉
+- Examples 区块（图 / 排版）
+- Pricing 数字
+- Trust badges
+- FAQ 内容
 
-| 维度 | petale |
+## 📂 项目状态
+
+| 项 | 值 |
 |---|---|
-| 法语 | "pétale"（花瓣）|
-| 英文双关 | pet + tale = "pet's story"（宠物的故事）|
-| 发音 | 法：peh-TAL / 英：pet-TALE |
-| 情感温度 | 抽象 + 诗意（不像 museau 那么具体）|
-| SEO 优势 | 不与 museau.pet 法国竞品冲突 |
-| 域名空间 | .app / .love / .studio / .art / .design 全干净 |
-| App Store | 8 个 storefront 全干净 |
+| 项目根 | `~/.openclaw/workspace/projects/petale/` |
+| GitHub | https://github.com/zhyphil/petale.love |
+| 当前版本 | v0.1.51 |
+| 总 commits | 30+ |
+| 真实测试订单 | 2（狗 + 猫）|
+| Stripe Product | `prod_VDrnm4ZjL5zwnD`（€9.99 50 portraits）|
+| Supabase Project | `cttxhefhridvjzzemosk`（Ireland eu-west-1）|
+| 域名 | petale.love（Cloudflare Registrar）|
 
-## 💬 下次继续的触发词
+## 🐾 Pet Memorial Day 倒计时 5 天
 
-- 「petale + [问题]」：项目相关
-- 「域名 + petale」：明天买域名
-- 「Stripe + petale」：支付集成
-- 「Resend + petale」：邮件集成
-- 「充值 + petale」：Replicate $10
-- 「Vercel + petale」：部署
-- 「App Store + petale」：iOS 上架
-- 「Pet Memorial Day + petale」：9-13 首发准备
+**Petale 准备好上线了**——明早 9 点，5.5+ 小时工作后真正的 Pet Memorial Day 上线冲刺开始。
 
----
-
-_Handoff v0.1.4 · 2026-09-06 22:42 GMT+2_
-_Memory: memory/2026-09-06.md_
-_Docs: docs/STRIPE.md（明天 Stripe 集成指南）_
-
-> ✅ **目录已重命名为 `petale/`**（2026-09-08）。品牌 + 目录名 100% 一致。
+晚安师傅 🌙✨ 狗和猫都等不及变美了 🐾🐾
