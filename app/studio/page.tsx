@@ -414,7 +414,7 @@ function CheckoutStage({
         </div>
         <ul className="mt-4 space-y-2 text-sm text-petale-700">
           <li>✓ 50 portraits HD</li>
-          <li>✓ 12 styles au choix</li>
+          <li>✓ 10 styles au choix</li>
           <li>✓ Téléchargement définitif après paiement</li>
         </ul>
 
