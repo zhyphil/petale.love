@@ -5,12 +5,12 @@
  */
 
 const examples = [
-  { style: 'Aquarelle', pet: 'Chat', gradient: 'from-petale-200 to-petale-400' },
-  { style: 'Huile Renaissance', pet: 'Chien', gradient: 'from-amber-200 to-amber-500' },
-  { style: 'Manga', pet: 'Chat', gradient: 'from-pink-200 to-rose-400' },
-  { style: 'Pop Art', pet: 'Chien', gradient: 'from-yellow-200 to-orange-400' },
-  { style: 'Cyberpunk', pet: 'Chat', gradient: 'from-purple-300 to-indigo-500' },
-  { style: 'Noël', pet: 'Chien', gradient: 'from-red-200 to-red-400' },
+  { style: 'Aquarelle', pet: 'Chat', image: 'https://replicate.delivery/xezq/JqRd84qnikbsEZfL9tflkaE0vTvdaQvxmoffAuu2518gm5tc.png?width=400' },
+  { style: 'Huile Renaissance', pet: 'Chien', image: 'https://replicate.delivery/xezq/QVWtaklpYfVVfEqx57rc9TdAte2vPJ3b6gafDm9kDjggm5tc.png?width=400' },
+  { style: 'Manga', pet: 'Chat', image: 'https://replicate.delivery/xezq/rzg309VykBYHPd64QexaC9RQevgAHreOqcfLkPvoH9meMzb5.png?width=400' },
+  { style: 'Pop Art', pet: 'Chien', image: 'https://replicate.delivery/xezq/NQ8CH9e1lB3dZClvNzbWudxKz1Djwgshr4Ikmf4kZWc1ZeWu.png?width=400' },
+  { style: 'Cyberpunk', pet: 'Chat', image: 'https://replicate.delivery/xezq/kvWfK3AJmIxbRSYAYlPoEWHMJ4rTiF1W8WYPtKMCmVxBNvlL.png?width=400' },
+  { style: 'Noël', pet: 'Chien', image: 'https://replicate.delivery/xezq/6hXV1wjrOEZwAx6B1NrfvxMgqZnDi0A2SrPQ6FmtTowVNvlL.png?width=400' },
 ];
 
 export function Examples() {
@@ -19,7 +19,7 @@ export function Examples() {
       <div className="container-mx">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-3xl font-bold tracking-tight text-petale-950 sm:text-4xl">
-            12 styles. 48 portraits. Une seule photo.
+            10 styles. 50 portraits. Une seule photo.
           </h2>
           <p className="mt-4 text-lg text-petale-700">
             Du Renaissance au cyberpunk, en passant par les thèmes saisonniers.
@@ -32,12 +32,14 @@ export function Examples() {
               key={ex.style}
               className={`group relative aspect-square overflow-hidden rounded-2xl bg-gradient-to-br ${ex.gradient} shadow-sm transition hover:scale-105 hover:shadow-xl`}
             >
-              {/* 占位：实际部署前替换为真实生成图 */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-4xl opacity-30">
-                  {ex.pet === 'Chat' ? '🐱' : '🐶'}
-                </span>
-              </div>
+              {/* v0.1.41: 真实生成的猫肖像（用猫订单的 6 张 v1 图） */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={ex.image}
+                alt={`Portrait style ${ex.style}`}
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+              />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-3">
                 <p className="text-xs font-semibold text-white">{ex.style}</p>
               </div>
