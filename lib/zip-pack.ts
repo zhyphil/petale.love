@@ -58,8 +58,11 @@ export async function packagePortraitsAsZip(
   const zipBuffer = Buffer.concat(zipBufferChunks);
   console.log(`[zip] ZIP ready: ${(zipBuffer.length / 1024 / 1024).toFixed(2)} MB`);
 
-  // 上传到 Supabase Storage
-  const filename = `petale-${orderId}-${Date.now()}.zip`;
+  // 上传到 Supabase Storage（v0.1.25: 客户友好的文件名）
+  // 之前：petale-{uuid}-{timestamp}.zip（暴露订单 ID + 不像产品）
+  // 现在：portraits-petale-{yyyymmdd}.zip（产品级 + 纯日期）
+  const today = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+  const filename = `portraits-petale-${today}.zip`;
   const { error: uploadErr } = await supabase.storage
     .from(ZIP_BUCKET)
     .upload(filename, zipBuffer, {
@@ -78,5 +81,6 @@ export async function packagePortraitsAsZip(
     .getPublicUrl(filename);
 
   console.log(`[zip] ✅ ZIP uploaded: ${publicUrl.publicUrl}`);
+  console.log(`[zip] Download filename: ${filename}`);
   return publicUrl.publicUrl;
 }
