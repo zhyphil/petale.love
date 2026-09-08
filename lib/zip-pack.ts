@@ -67,12 +67,17 @@ export async function packagePortraitsAsZip(
     .from(ZIP_BUCKET)
     .upload(filename, zipBuffer, {
       contentType: 'application/zip',
-      upsert: false,
+      upsert: true, // v0.1.25: 同一天多次下载会覆盖（避免 409 conflict）
     });
 
   if (uploadErr) {
-    console.error('[zip] Upload error:', uploadErr);
-    throw new Error(`Failed to upload ZIP: ${uploadErr.message}`);
+    // v0.1.25: 即使 upsert:true 也可能返回 409，接受为覆盖成功
+    if (uploadErr.message?.includes('already exists') || uploadErr.message?.includes('Duplicate')) {
+      console.log(`[zip] File ${filename} already exists, treating as overwrite`);
+    } else {
+      console.error('[zip] Upload error:', uploadErr);
+      throw new Error(`Failed to upload ZIP: ${uploadErr.message}`);
+    }
   }
 
   // 公开 URL
