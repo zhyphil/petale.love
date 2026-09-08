@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-petale-50 text-petale-950 antialiased;
+  }
+}
+
+@layer components {
+  .container-mx {
+    @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-petale-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-petale-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petale-600 disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-petale-300 bg-white px-6 py-3 text-base font-semibold text-petale-800 shadow-sm transition hover:bg-petale-50;
+  }
+}

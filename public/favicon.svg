@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- petale favicon — 宠物爪印 + 太阳/星星 抽象组合 -->
+  <defs>
+    <linearGradient id="warm" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf8f3"/>
+      <stop offset="100%" stop-color="#c87838"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#warm)"/>
+  <!-- 中心爪印主体 -->
+  <ellipse cx="16" cy="20" rx="5" ry="6" fill="#fdf8f3"/>
+  <!-- 四个爪趾 -->
+  <ellipse cx="9" cy="13" rx="2.2" ry="3" fill="#fdf8f3"/>
+  <ellipse cx="23" cy="13" rx="2.2" ry="3" fill="#fdf8f3"/>
+  <ellipse cx="13" cy="9" rx="2" ry="2.6" fill="#fdf8f3"/>
+  <ellipse cx="19" cy="9" rx="2" ry="2.6" fill="#fdf8f3"/>
+</svg>

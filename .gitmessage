@@ -1,0 +1,39 @@
+# <type>(<scope>): <subject>  ← 50 字符内，动词现在时
+#
+# <body>  ← 72 字符/行，解释 WHY 不是 WHAT
+#
+# <footer>  ← 关联 issue / breaking change
+#
+# === Type 选一个 ===
+# feat:     新功能（用户能感知）
+# fix:      bug 修复
+# refactor: 代码重构（既不加功能也不修 bug）
+# perf:     性能优化
+# test:     加测试
+# docs:     只改文档/README
+# style:    格式调整（不影响代码逻辑）
+# chore:    杂项（依赖更新、build 配置等）
+# lint:     只改 linter 配置/规则
+# frontend: 前端（components/ pages/）
+# backend:  后端（API routes/ lib/）
+# fullstack: 跨前后端
+#
+# === Scope 选一个（可省略）===
+# studio | landing | api | webhook | email
+# stripe | supabase | replicate | zip | config
+# deps | docs
+#
+# === 示例 ===
+# feat(studio): show 6 free preview portraits instead of 3
+# fix(webhook): use public_url not original_image_url
+# fullstack(email): switch from hello@ to noreply@petale.love
+# refactor(backend): extract generateFullPackAndEmail to lib/petale-order
+# chore(deps): add archiver for ZIP packaging
+# lint: fix tsc errors in zip-pack.ts
+#
+# === Breaking Change（如果有）===
+# BREAKING CHANGE: <描述>
+#
+# === References ===
+# Refs: #123
+# Closes: #456

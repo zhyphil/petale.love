@@ -1,0 +1,29 @@
+# OG Image Placeholder
+
+需要生成 1200×630 的 Open Graph 图。
+
+## v0.1 临时方案
+
+用 [Canva OG Image Generator](https://www.canva.com/) 或 [ogimage.xyz](https://ogimage.xyz/) 生成：
+
+- 尺寸：1200 × 630
+- 文字：「Museau — Portraits IA pour votre animal」
+- 副标题：「3 portraits gratuits avant de payer. Satisfait ou remboursé.」
+- 主图：3 张风格化宠物肖像拼图（watercolor / renaissance / manga）
+- 背景色：`#fdf8f3` (museau-50)
+- 文字色：`#2e1810` (museau-950)
+- 强调色：`#c87838` (museau-600)
+
+## 部署前必做
+
+替换 `public/og.png` 为真实生成图。文件名必须保持 `og.png`（layout.tsx 已引用）。
+
+可以先用以下命令占位：
+
+```bash
+# 暂时用纯色占位图（Vercel 部署前必须替换）
+convert -size 1200x630 xc:'#fdf8f3' -gravity center \
+  -fill '#2e1810' -pointsize 48 -annotate +0-50 'Museau' \
+  -pointsize 24 -annotate +0+30 'Portraits IA pour votre animal' \
+  public/og.png
+```
