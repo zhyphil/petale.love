@@ -5,12 +5,12 @@
  */
 
 const examples = [
-  { style: 'Aquarelle', pet: 'Chat', image: 'https://replicate.delivery/xezq/JqRd84qnikbsEZfL9tflkaE0vTvdaQvxmoffAuu2518gm5tc.png?width=400' },
-  { style: 'Huile Renaissance', pet: 'Chien', image: 'https://replicate.delivery/xezq/QVWtaklpYfVVfEqx57rc9TdAte2vPJ3b6gafDm9kDjggm5tc.png?width=400' },
-  { style: 'Manga', pet: 'Chat', image: 'https://replicate.delivery/xezq/rzg309VykBYHPd64QexaC9RQevgAHreOqcfLkPvoH9meMzb5.png?width=400' },
-  { style: 'Pop Art', pet: 'Chien', image: 'https://replicate.delivery/xezq/NQ8CH9e1lB3dZClvNzbWudxKz1Djwgshr4Ikmf4kZWc1ZeWu.png?width=400' },
-  { style: 'Cyberpunk', pet: 'Chat', image: 'https://replicate.delivery/xezq/kvWfK3AJmIxbRSYAYlPoEWHMJ4rTiF1W8WYPtKMCmVxBNvlL.png?width=400' },
-  { style: 'Noël', pet: 'Chien', image: 'https://replicate.delivery/xezq/6hXV1wjrOEZwAx6B1NrfvxMgqZnDi0A2SrPQ6FmtTowVNvlL.png?width=400' },
+  { style: 'Aquarelle', image: 'https://replicate.delivery/xezq/JqRd84qnikbsEZfL9tflkaE0vTvdaQvxmoffAuu2518gm5tc.png?width=400' },
+  { style: 'Huile Renaissance', image: 'https://replicate.delivery/xezq/QVWtaklpYfVVfEqx57rc9TdAte2vPJ3b6gafDm9kDjggm5tc.png?width=400' },
+  { style: 'Manga', image: 'https://replicate.delivery/xezq/rzg309VykBYHPd64QexaC9RQevgAHreOqcfLkPvoH9meMzb5.png?width=400' },
+  { style: 'Pop Art', image: 'https://replicate.delivery/xezq/NQ8CH9e1lB3dZClvNzbWudxKz1Djwgshr4Ikmf4kZWc1ZeWu.png?width=400' },
+  { style: 'Cyberpunk', image: 'https://replicate.delivery/xezq/kvWfK3AJmIxbRSYAYlPoEWHMJ4rTiF1W8WYPtKMCmVxBNvlL.png?width=400' },
+  { style: 'Noël', image: 'https://replicate.delivery/xezq/6hXV1wjrOEZwAx6B1NrfvxMgqZnDi0A2SrPQ6FmtTowVNvlL.png?width=400' },
 ];
 
 export function Examples() {
