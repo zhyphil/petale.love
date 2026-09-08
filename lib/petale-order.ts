@@ -8,10 +8,11 @@ import { sendOrderConfirmation } from './resend';
 import { packagePortraitsAsZip } from './zip-pack';
 import type { SupabaseClient } from '@supabase/supabase-js';
 
+// v0.1.34: 10 styles × 5 variants = 50 portraits
+// 砍 aquarium（水下不通用）+ stone-age（史前不太适合宠物）
 const FULL_PACK_STYLES = [
   'watercolor', 'renaissance', 'manga', 'pop-art', 'cyberpunk',
-  'noel', 'aquarium', 'stone-age', 'medieval-knight', 'astronaut',
-  'vintage-film', 'impressionist',
+  'noel', 'impressionist', 'vintage-film', 'astronaut', 'medieval-knight',
 ] as const;
 
 /**
@@ -31,10 +32,10 @@ export async function generateFullPackAndEmail({
   imageUrl: string;
   supabase: SupabaseClient;
 }) {
-  const VARIANTS = [1, 2, 3, 4] as const;
-  const TOTAL = FULL_PACK_STYLES.length * VARIANTS.length; // 12 × 4 = 48
+  const VARIANTS = [1, 2, 3, 4, 5] as const;
+  const TOTAL = FULL_PACK_STYLES.length * VARIANTS.length; // 10 × 5 = 50
 
-  console.log(`[generate] Starting ${TOTAL} portraits (${FULL_PACK_STYLES.length} styles × 4 variants in parallel) for ${email} (order ${orderId})...`);
+  console.log(`[generate] Starting ${TOTAL} portraits (${FULL_PACK_STYLES.length} styles × 5 variants in parallel) for ${email} (order ${orderId})...`);
 
   // v0.1.29: 48 张全部并行（不串行）—— 串行需要 12 分钟，并行 ~30 秒
   type GenerationResult = { style: string; variant: 1 | 2 | 3 | 4; url: string };

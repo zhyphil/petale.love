@@ -45,7 +45,7 @@ export interface GenerateOptions {
   /** v0.1.12: 模型选择，默认 'flux-pro' */
   model?: 'flux-pro' | 'flux-schnell'; // v0.1.14: 仅支持 input_images 的模型；保留 enum 兼容旧 API
   /** v0.1.20: 变体 1-4（不同 prompt 关键词生成同一风格的 4 张变体）*/
-  variant?: 1 | 2 | 3 | 4;
+  variant?: 1 | 2 | 3 | 4 | 5;
 }
 
 export interface GenerateResult {
@@ -63,17 +63,18 @@ export interface GenerateResult {
 export async function generatePetPortrait(
   options: GenerateOptions,
 ): Promise<GenerateResult> {
-  // v0.1.20: 4 个变体关键词（让每风格 4 张图都有差异）
-const VARIANT_SUFFIXES: Record<1 | 2 | 3 | 4, string> = {
+  // v0.1.34: 5 个变体关键词（让每风格 4 张图都有差异）
+const VARIANT_SUFFIXES: Record<1 | 2 | 3 | 4 | 5, string> = {
   1: '',
   2: ', soft warm lighting, golden hour, intimate atmosphere',
   3: ', minimalist solid background, clean composition, professional studio look',
   4: ', dramatic angle, dynamic pose, cinematic composition, bold perspective',
+  5: ', close-up intimate framing, eye-level perspective, emotional depth, shallow depth of field',
 };
 
 const stylePrompt = STYLE_PROMPTS[options.style];
   const variantSuffix =
-    options.variant !== undefined && VARIANT_SUFFIXES[options.variant]
+    (options.variant as 1 | 2 | 3 | 4 | 5) !== undefined && VARIANT_SUFFIXES[options.variant as 1 | 2 | 3 | 4 | 5]
       ? VARIANT_SUFFIXES[options.variant]
       : '';
   const fullPrompt = options.prompt

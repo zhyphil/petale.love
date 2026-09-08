@@ -21,12 +21,12 @@ const GenerateSchema = z.object({
   ])).optional(),
 });
 
-// 免费预览：6 张（覆盖 3 种核心风格 + 3 种前卫风格，让用户感受 petale 风格广度）
+// 免费预览：5 张（10 个核心 styles 中选 5 个最有视觉冲击的）
 const FREE_STYLES: PetStyle[] = [
   'watercolor', 'renaissance', 'manga',  // 3 个「安全」选择
   'pop-art', 'cyberpunk', 'noel',       // 3 个「前卫」选择
 ];
-// 付费包：12 张风格（10 + 2 隐藏）覆盖全部风格
+// 付费包：10 个 styles × 5 变体 = 50 张
 const FULL_PACK_STYLES: PetStyle[] = [
   'watercolor', 'renaissance', 'manga', 'pop-art', 'cyberpunk',
   'noel', 'aquarium', 'stone-age', 'medieval-knight', 'astronaut',
