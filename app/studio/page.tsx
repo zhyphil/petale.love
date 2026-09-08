@@ -47,6 +47,9 @@ export default function StudioPage() {
   }, []);
 
   function handleFile(f: File) {
+    // 重置 input.value 以允许重选同名图
+    if (fileInputRef.current) fileInputRef.current.value = '';
+
     if (f.size > 10 * 1024 * 1024) {
       setError('Image trop volumineuse (max 10 Mo)');
       return;
@@ -249,6 +252,13 @@ function UploadStage({
             <div className="relative aspect-square w-full max-w-md mx-auto overflow-hidden rounded-3xl bg-white shadow-lg">
               <Image src={preview} alt="Preview" fill className="object-cover" />
             </div>
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              className="text-sm text-petale-600 hover:text-petale-800 underline"
+            >
+              Changer de photo
+            </button>
             <div className="text-center">
               <button
                 onClick={onSubmit}
