@@ -61,8 +61,8 @@ export async function packagePortraitsAsZip(
   // 上传到 Supabase Storage（v0.1.25: 客户友好的文件名）
   // 之前：petale-{uuid}-{timestamp}.zip（暴露订单 ID + 不像产品）
   // 现在：portraits-petale-{yyyymmdd}.zip（产品级 + 纯日期）
-  const today = new Date().toISOString().slice(0, 10).replace(/-/g, '');
-  const filename = `portraits-petale-${today}.zip`;
+  const timestamp = new Date().toISOString().replace(/[-:T.Z]/g, ''); const yyyymmddHHMMSS = timestamp.slice(0, 14);
+  const filename = `portraits-petale-${portraitEntries.length}-${yyyymmddHHMMSS}.zip`;
   const { error: uploadErr } = await supabase.storage
     .from(ZIP_BUCKET)
     .upload(filename, zipBuffer, {
