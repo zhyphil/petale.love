@@ -40,12 +40,13 @@ export default function TermsPage() {
 
       <section className="mt-8">
         <h2 className="font-display text-2xl font-bold text-museau-900">
-          3. Politique de remboursement
+          3. Vente définitive
         </h2>
         <p>
-          Satisfait ou remboursé sous <strong>7 jours</strong> après l&apos;achat. Pour demander un
-          remboursement, écrivez à <a href="mailto:hello@petale.love">hello@petale.love</a> en indiquant votre
-          adresse e-mail de paiement. Remboursement sous 48&nbsp;heures via Stripe.
+          Conformément à l&apos;article <strong>L221-28 du Code de la consommation</strong>, le droit de rétractation ne s&apos;applique pas aux contenus numériques fournis immédiatement après téléchargement. Une fois le paiement effectué et les portraits générés, la vente est <strong>définitive et non remboursable</strong>. Les portraits vous appartiennent, libres de droits pour usage personnel.
+        </p>
+        <p>
+          En cas de problème technique (portraits non générés, ZIP corrompu), écrivez à <a href="mailto:hello@petale.love">hello@petale.love</a> sous 48h — on remplace ou corrige gratuitement.
         </p>
       </section>
 
@@ -77,7 +78,7 @@ export default function TermsPage() {
         <p>
           petale est un service fourni &laquo;&nbsp;en l&apos;état&nbsp;&raquo;. Nous faisons notre
           possible pour assurer la qualité, mais le résultat dépend d&apos;un modèle d&apos;IA et peut varier.
-          Le remboursement de 7 jours couvre toute insatisfaction.
+          
         </p>
       </section>
 

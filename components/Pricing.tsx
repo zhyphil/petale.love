@@ -70,7 +70,7 @@ export function Pricing() {
               </li>
               <li className="flex gap-2">
                 <span className="text-petale-600">✓</span>
-                <span>Satisfait ou remboursé 7 jours</span>
+                <span>Téléchargement définitif après paiement</span>
               </li>
             </ul>
             <a href="/studio" className="btn-primary mt-8 w-full">

@@ -34,7 +34,7 @@ export function Hero() {
             Téléchargez une photo de votre chien, chat ou lapin.
             <span className="font-semibold"> 3 portraits gratuits</span> générés par IA.
             Vous aimez ? Recevez 42 autres dans 12 styles.
-            <span className="font-semibold"> Pas convaincu ? Remboursé 7 jours.</span>
+            <span className="font-semibold"> Vente définitive — téléchargement immédiat.</span>
           </p>
 
           {/* Hero CTAs */}
@@ -61,7 +61,7 @@ export function Hero() {
             <span className="hidden sm:inline">·</span>
             <span className="inline-flex items-center gap-1.5">
               <Shield className="h-4 w-4 text-petale-600" />
-              Satisfait ou remboursé 7 jours
+              Téléchargement définitif
             </span>
             <span className="hidden sm:inline">·</span>
             <span>Vos photos ne sont jamais partagées</span>

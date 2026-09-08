@@ -328,7 +328,7 @@ function PreviewStage({
           Débloquez les 42 autres portraits
         </h2>
         <p className="mt-2 text-center text-petale-700">
-          12 styles · Haute définition · Satisfait ou remboursé 7 jours
+          10 styles × 5 variantes · 50 portraits HD
         </p>
 
         <div className="mt-6">
@@ -387,7 +387,7 @@ function CheckoutStage({
         <ul className="mt-4 space-y-2 text-sm text-petale-700">
           <li>✓ 50 portraits HD</li>
           <li>✓ 12 styles au choix</li>
-          <li>✓ Satisfait ou remboursé 7 jours</li>
+          <li>✓ Téléchargement définitif après paiement</li>
         </ul>
 
         <div className="mt-6">

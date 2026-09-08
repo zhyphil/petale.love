@@ -74,8 +74,8 @@ const VARIANT_SUFFIXES: Record<1 | 2 | 3 | 4 | 5, string> = {
 
 const stylePrompt = STYLE_PROMPTS[options.style];
   const variantSuffix =
-    (options.variant as 1 | 2 | 3 | 4 | 5) !== undefined && VARIANT_SUFFIXES[options.variant as 1 | 2 | 3 | 4 | 5]
-      ? VARIANT_SUFFIXES[options.variant]
+    options.variant !== undefined && VARIANT_SUFFIXES[options.variant as 1 | 2 | 3 | 4 | 5]
+      ? VARIANT_SUFFIXES[options.variant as 1 | 2 | 3 | 4 | 5]
       : '';
   const fullPrompt = options.prompt
     ? `${stylePrompt}, ${options.prompt}${variantSuffix}`

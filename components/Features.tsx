@@ -18,7 +18,7 @@ const features = [
     icon: '✨',
   },
   {
-    title: 'Satisfait ou remboursé 7 jours',
+    title: 'Téléchargement définitif',
     description:
       'Si le portrait ne ressemble pas à votre animal, on vous rembourse. Sans question.',
     icon: '💛',
