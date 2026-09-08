@@ -1,6 +1,6 @@
 {
   "name": "petale",
-  "version": "0.2.0-roadmap",
+  "version": "0.1.5-i18n-roadmap",
   "private": true,
   "description": "petale — 宠物 AI 肖像，先看后付",
   "scripts": {
