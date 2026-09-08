@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
         .from('generated_portraits')
         .select('style, image_url')
         .eq('order_id', orderId)
-        .order('style', { ascending: true });
+        .order('created_at', { ascending: true });
 
       if (rowsErr || !rows || rows.length === 0) {
         return NextResponse.json(
