@@ -33,7 +33,7 @@ export function Hero() {
           <p className="mt-6 text-lg leading-8 text-petale-800 sm:text-xl">
             Téléchargez une photo de votre chien, chat ou lapin.
             <span className="font-semibold"> 3 portraits gratuits</span> générés par IA.
-            Vous aimez ? Recevez 47 autres dans 12 styles.
+            Vous aimez ? Recevez 42 autres dans 12 styles.
             <span className="font-semibold"> Pas convaincu ? Remboursé 7 jours.</span>
           </p>
 
@@ -56,7 +56,7 @@ export function Hero() {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-petale-700">
             <span className="inline-flex items-center gap-1.5">
               <Shield className="h-4 w-4 text-petale-600" />
-              6 portraits gratuits avant de payer
+              6 portraits gratuits · 48 dans le pack complet
             </span>
             <span className="hidden sm:inline">·</span>
             <span className="inline-flex items-center gap-1.5">

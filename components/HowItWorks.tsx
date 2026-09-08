@@ -15,7 +15,7 @@ const steps = [
     n: '3',
     title: 'Payez seulement si vous aimez',
     description:
-      '€9.99 pour 50 portraits supplémentaires dans 12 styles. Ou ne payez rien — votre appel.',
+      '€9.99 pour 48 portraits supplémentaires dans 12 styles. Ou ne payez rien — votre appel.',
   },
   {
     n: '4',

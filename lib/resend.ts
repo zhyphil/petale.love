@@ -47,14 +47,14 @@ export async function sendOrderConfirmation({
   return resend.emails.send({
     from: `petale <${FROM_EMAIL}>`,
     to: email,
-    subject: 'Vos portraits petale sont prêts 🎨',
+    subject: 'Vos 48 portraits petale sont prêts 🎨',
     html: `
       <div style="font-family: Inter, system-ui, sans-serif; max-width: 560px; margin: 0 auto; padding: 32px 24px; color: #2e1810;">
         <h1 style="font-family: Fraunces, Georgia, serif; color: #c87838; font-size: 28px;">
           Merci pour votre confiance.
         </h1>
         <p style="font-size: 16px; line-height: 1.6;">
-          Vos 12 portraits haute définition sont prêts. <strong>Un seul clic pour tout télécharger</strong> dans un fichier ZIP.
+          Vos 48 portraits haute définition sont prêts. <strong>Un seul clic pour tout télécharger</strong> dans un fichier ZIP.
           Chaque style est numéroté (01-watercolor.jpg, 02-renaissance.jpg, etc.) pour faciliter l'impression.
         </p>
 
@@ -67,7 +67,7 @@ export async function sendOrderConfirmation({
             📦 Télécharger tous mes portraits (ZIP)
           </a>
           <p style="font-size: 12px; color: #834626; margin-top: 12px;">
-            12 portraits · haute définition · libres de droits
+            48 portraits · haute définition · libres de droits
           </p>
         </div>
 

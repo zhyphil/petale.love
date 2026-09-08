@@ -45,7 +45,7 @@ export function Pricing() {
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-petale-600 px-4 py-1 text-xs font-semibold text-white shadow">
               Le plus populaire
             </div>
-            <h3 className="font-display text-2xl font-bold text-petale-950">Pack 50</h3>
+            <h3 className="font-display text-2xl font-bold text-petale-950">Pack 48</h3>
             <p className="mt-2 text-sm text-petale-700">12 styles, tous les formats</p>
             <p className="mt-6 font-display text-4xl font-bold text-petale-950">
               9,99 €
@@ -54,7 +54,7 @@ export function Pricing() {
             <ul className="mt-6 space-y-3 text-sm text-petale-800">
               <li className="flex gap-2">
                 <span className="text-petale-600">✓</span>
-                <span>50 portraits HD</span>
+                <span>48 portraits HD (12 styles × 4 variantes)</span>
               </li>
               <li className="flex gap-2">
                 <span className="text-petale-600">✓</span>
@@ -89,7 +89,7 @@ export function Pricing() {
             <ul className="mt-6 space-y-3 text-sm text-petale-800">
               <li className="flex gap-2">
                 <span className="text-petale-600">✓</span>
-                <span>Tout le Pack 50</span>
+                <span>Tout le Pack 48</span>
               </li>
               <li className="flex gap-2">
                 <span className="text-petale-600">✓</span>

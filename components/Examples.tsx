@@ -19,7 +19,7 @@ export function Examples() {
       <div className="container-mx">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-3xl font-bold tracking-tight text-petale-950 sm:text-4xl">
-            12 styles. 50 portraits. Une seule photo.
+            12 styles. 48 portraits. Une seule photo.
           </h2>
           <p className="mt-4 text-lg text-petale-700">
             Du Renaissance au cyberpunk, en passant par les thèmes saisonniers.

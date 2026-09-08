@@ -301,7 +301,7 @@ function PreviewStage({
           Voici vos 6 portraits gratuits
         </h1>
         <p className="mt-3 text-petale-700">
-          Vous aimez ? Obtenez 44 autres pour €9,99.
+          Vous aimez ? Obtenez 42 autres pour €9,99.
           <br />
           Pas convaincu ? Aucun engagement.
         </p>
@@ -325,7 +325,7 @@ function PreviewStage({
 
       <div className="mt-12 rounded-3xl border-2 border-petale-600 bg-white p-8 shadow-xl">
         <h2 className="text-center font-display text-2xl font-bold text-petale-950">
-          Débloquez les 47 autres portraits
+          Débloquez les 42 autres portraits
         </h2>
         <p className="mt-2 text-center text-petale-700">
           12 styles · Haute définition · Satisfait ou remboursé 7 jours
