@@ -144,6 +144,7 @@ export default function StudioPage() {
     <>
       {/* v0.1.39: 始终渲染的 hidden file input（之前在 !preview 分支里，已上传时 input 被卸载导致 ref 失效） */}
       <input
+        id="file-upload"
         ref={fileInputRef}
         type="file"
         accept="image/jpeg,image/png"
