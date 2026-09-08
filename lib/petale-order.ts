@@ -104,8 +104,20 @@ export async function generateFullPackAndEmail({
 
       zipUrl = await packagePortraitsAsZip(entries, orderId);
     } catch (err) {
+      // v0.1.33: ZIP 失败时也发 fallback 邮件（不静默）
       console.error(`[zip] ❌ ZIP packaging failed:`, err);
-      return { ok: false, error: 'ZIP failed', portraitCount: portraits.length };
+      try {
+        const { sendOrderConfirmation } = await import('@/lib/resend');
+        await sendOrderConfirmation({
+          email,
+          imageUrl: portraits[0],
+          zipUrl: '', // 空 zipUrl 邮件模板会显示 12 个单独链接
+        });
+        console.log(`[resend] ✅ Fallback email sent (no ZIP)`);
+      } catch (emailErr) {
+        console.error(`[resend] ❌ Fallback email failed:`, emailErr);
+      }
+      return { ok: false, error: 'ZIP failed, fallback email sent', portraitCount: portraits.length };
     }
 
     console.log(`[resend] Sending email to ${email} with ZIP...`);
