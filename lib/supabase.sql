@@ -115,7 +115,7 @@ on conflict (id) do nothing;
 
 -- generated-portraits（AI 生成的肖像）
 insert into storage.buckets (id, name, public, file_size_limit)
-values ('generated-portraits', 'generated-portraits', true, 10485760)
+values ('generated-portraits', 'generated-portraits', true, 104857600)  -- 100MB (v0.1.30)
 on conflict (id) do nothing;
 
 -- ===== 5. Storage RLS =====
